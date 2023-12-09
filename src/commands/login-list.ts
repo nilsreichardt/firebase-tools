@@ -22,7 +22,9 @@ export const command = new Command("login:list")
     const otherAccounts = allAccounts.filter((a) => a.user.email !== user.email);
     if (otherAccounts.length > 0) {
       logger.info();
-      logger.info(`Other available accounts (switch with "${clc.bold("firebase login:use")}")`);
+      logger.info(
+        `Other available accounts (switch with "${clc.bold("firebase login:use EMAIL")}")`
+      );
       for (const a of otherAccounts) {
         logger.info(` - ${a.user.email}`);
       }
